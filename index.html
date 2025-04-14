@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>隨機播放 Google Drive 影片</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: black;
+    }
+    video {
+      width: 100vw;
+      height: 100vh;
+      object-fit: contain;
+    }
+  </style>
+</head>
+<body>
+  <video id="videoPlayer" controls autoplay muted></video>
+
+  <script>
+    const videoUrls = [
+      "https://drive.google.com/uc?export=download&id=1aSQJtIl8K41a9MOjU8FqFxwqBQzuXmW3",
+      "https://drive.google.com/uc?export=download&id=1J5GNRI_lIcy7uN8pEfXKtGke4FTKnpyg",
+      "https://drive.google.com/uc?export=download&id=1Rl3b7VmruKhjStzuwTDZAvhYO2rdqk2z",
+      "https://drive.google.com/uc?export=download&id=1FUr1mAAEq_o9UtqNzr7TUIxQz0ShHTgf",
+      "https://drive.google.com/uc?export=download&id=1k9djhuJuT2y9MyE0IhDLWz7lXgdc0_P7",
+      "https://drive.google.com/uc?export=download&id=1TDkUvNDBZ4rXozzUbhKZqMH5BNt7sAUN",
+      "https://drive.google.com/uc?export=download&id=1dBHD5YDMfFUKhUjmcUgtfu2gWnUpAJK7",
+      "https://drive.google.com/uc?export=download&id=1wKrdwE0sx2KHHEhi9XL5aFx6Z9ZQExN1",
+      "https://drive.google.com/uc?export=download&id=1bYJeZmjOdCIYggTLzEoVtN7GQd6Q2hGp"
+    ];
+
+    const randomIndex = Math.floor(Math.random() * videoUrls.length);
+    const selectedVideo = videoUrls[randomIndex];
+
+    const videoPlayer = document.getElementById('videoPlayer');
+    videoPlayer.src = selectedVideo;
+  </script>
+</body>
+</html>
