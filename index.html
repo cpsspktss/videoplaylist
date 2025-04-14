@@ -2,40 +2,40 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
-  <title>隨機播放 Google Drive 影片</title>
+  <title>隨機播放 YouTube 影片</title>
   <style>
-    body {
+    html, body {
       margin: 0;
-      background-color: black;
+      height: 100%;
+      background: black;
     }
-    video {
+    iframe {
       width: 100vw;
       height: 100vh;
-      object-fit: contain;
+      border: none;
     }
   </style>
 </head>
 <body>
-  <video id="videoPlayer" controls autoplay muted></video>
-
   <script>
-    const videoUrls = [
-      "https://drive.google.com/uc?export=download&id=1aSQJtIl8K41a9MOjU8FqFxwqBQzuXmW3",
-      "https://drive.google.com/uc?export=download&id=1J5GNRI_lIcy7uN8pEfXKtGke4FTKnpyg",
-      "https://drive.google.com/uc?export=download&id=1Rl3b7VmruKhjStzuwTDZAvhYO2rdqk2z",
-      "https://drive.google.com/uc?export=download&id=1FUr1mAAEq_o9UtqNzr7TUIxQz0ShHTgf",
-      "https://drive.google.com/uc?export=download&id=1k9djhuJuT2y9MyE0IhDLWz7lXgdc0_P7",
-      "https://drive.google.com/uc?export=download&id=1TDkUvNDBZ4rXozzUbhKZqMH5BNt7sAUN",
-      "https://drive.google.com/uc?export=download&id=1dBHD5YDMfFUKhUjmcUgtfu2gWnUpAJK7",
-      "https://drive.google.com/uc?export=download&id=1wKrdwE0sx2KHHEhi9XL5aFx6Z9ZQExN1",
-      "https://drive.google.com/uc?export=download&id=1bYJeZmjOdCIYggTLzEoVtN7GQd6Q2hGp"
+    const videoIds = [
+      "hw2xgPhDF2M",  // 替換成你嘅 YouTube ID
+      "RMyhDWaEID8",
+      "0ZCTG1OwTt8"
+      "jOWQIb0dos8",
+      "Gt8bQjGTvtQ"
+      "K2sWNTvDLkU",
+      "yi5jMjBxElQ"
+      "JOBIK1tOKnk",
+      "vP2YbtEzICw"
+      
     ];
 
-    const randomIndex = Math.floor(Math.random() * videoUrls.length);
-    const selectedVideo = videoUrls[randomIndex];
+    const randomIndex = Math.floor(Math.random() * videoIds.length);
+    const selectedId = videoIds[randomIndex];
+    const url = `https://www.youtube.com/embed/${selectedId}?autoplay=1&loop=1&playlist=${selectedId}&mute=1&controls=0`;
 
-    const videoPlayer = document.getElementById('videoPlayer');
-    videoPlayer.src = selectedVideo;
+    document.write(`<iframe src="${url}" allow="autoplay; fullscreen"></iframe>`);
   </script>
 </body>
 </html>
